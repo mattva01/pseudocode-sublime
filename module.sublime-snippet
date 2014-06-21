@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[Module ${1:function}($2)
+	$0
+End Module]]></content>
+	<tabTrigger>Module</tabTrigger>
+	<scope>source.pseudocode,</scope>
+	<description>Module Declaration</description>
+</snippet>
