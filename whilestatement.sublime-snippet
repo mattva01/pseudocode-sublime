@@ -3,6 +3,6 @@
 	$0
 End While]]></content>
 	<tabTrigger>While</tabTrigger>
-	<scope>source.pseudocode,</scope>
+	<scope>source.pseudocode</scope>
 	<description>While loop</description>
 </snippet>

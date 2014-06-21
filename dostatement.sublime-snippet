@@ -3,6 +3,6 @@
 	$0
 While (${1:True})]]></content>
 	<tabTrigger>Do</tabTrigger>
-	<scope>source.pseudocode,</scope>
+	<scope>source.pseudocode</scope>
 	<description>Do loop</description>
 </snippet>
