@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Miscellaneous</string>
+	<key>scope</key>
+	<string>source.pseudocode</string>
+	<key>settings</key>
+	<dict>
+		<key>decreaseIndentPattern</key>
+		<string>^\s*(End Module|End If|End While|End For|End Select)\b.*</string>
+		<key>increaseIndentPattern</key>
+		<string>^\s*(Module|If|For|Select|While|Do)\b.*\s*$</string>
+		<key>disableIndentNextLinePattern</key>
+		<string></string>
+	</dict>
+	<key>uuid</key>
+	<string>43877934-69D3-4773-8786-9B5211012A9A</string>
+</dict>
+</plist>
