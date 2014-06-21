@@ -24,7 +24,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(For|Do|While|End While|If|End If|Then|Else|End For)\b</string>
+			<string>\b(For|Do|While|End While|If|End If|Then|Else|End For|End Module|Select|Case)\b</string>
 			<key>name</key>
 			<string>keyword.control.pseudocode</string>
 		</dict>
@@ -108,6 +108,54 @@
 					<string>(?=\)\s*)</string>
 				</dict>
 			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(')</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.pseudocode</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(')</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.pseudocode</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.single.pseudocode</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(")</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.pseudocode</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(")</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.pseudocode</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.single.pseudocode</string>
 		</dict>
 	</array>
 	<key>scopeName</key>

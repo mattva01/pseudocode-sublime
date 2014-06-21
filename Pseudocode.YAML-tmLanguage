@@ -11,7 +11,7 @@ patterns:
     '1': {name: punctuation.definition.comment.pseudocode}
 
 - name: keyword.control.pseudocode
-  match: \b(For|Do|While|End While|If|End If|Then|Else|End For)\b
+  match: \b(For|Do|While|End While|If|End If|Then|Else|End For|End Module|Select|Case)\b
 
 - name: storage.type.pseudocode
   match: \b(Integer|Real|String|Boolean)\b
@@ -44,3 +44,17 @@ patterns:
       '1': {name: punctuation.definition.parameters.begin.pseudocode}
     contentName: meta.function.parameters.pseudocode
     end: (?=\)\s*)
+- begin: (')
+  beginCaptures:
+    '1': {name: punctuation.definition.string.begin.pseudocode}
+  end: (')
+  endCaptures:
+    '1': {name: punctuation.definition.string.end.pseudocode}
+  name: string.quoted.single.pseudocode
+- begin: (")
+  beginCaptures:
+    '1': {name: punctuation.definition.string.begin.pseudocode}
+  end: (")
+  endCaptures:
+    '1': {name: punctuation.definition.string.end.pseudocode}
+  name: string.quoted.single.pseudocode

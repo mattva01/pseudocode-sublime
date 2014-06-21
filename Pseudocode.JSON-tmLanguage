@@ -1,0 +1,73 @@
+{
+    "name": "Pseudocode", 
+    "fileTypes": [], 
+    "uuid": "3010fe6c-ea8a-4acf-a7cd-ffc0cb29b832", 
+    "patterns": [
+        {
+            "name": "comment.line.note.pseudocode", 
+            "match": "(//).*$\\n?", 
+            "captures": {
+                "1": {
+                    "name": "punctuation.definition.comment.pseudocode"
+                }
+            }
+        }, 
+        {
+            "name": "keyword.control.pseudocode", 
+            "match": "\\b(For|Do|While|End While|If|End If|Then|Else|End For|End Module|Select|Case)\\b"
+        }, 
+        {
+            "name": "storage.type.pseudocode", 
+            "match": "\\b(Integer|Real|String|Boolean)\\b"
+        }, 
+        {
+            "name": "storage.modifier.pseudocode", 
+            "match": "\\b(Constant)\\b"
+        }, 
+        {
+            "name": "constant.numeric.pseudocode", 
+            "match": "\\b((0(x|X)[0-9a-fA-F]+)|([0-9]+(\\.[0-9]+)?))\\b"
+        }, 
+        {
+            "name": "keyword.operator.pseudocode", 
+            "match": "=|==|!="
+        }, 
+        {
+            "name": "keyword.other.pseudocode", 
+            "match": "\\b(Display|Input|Declare|Set|Call)\\b"
+        }, 
+        {
+            "name": "meta.function.pseudocode", 
+            "patterns": [
+                {
+                    "end": "(?![A-Za-z0-9_])", 
+                    "contentName": "entity.name.function.pseudocode", 
+                    "begin": "(?=[A-Za-z_][A-Za-z0-9_]*)"
+                }, 
+                {
+                    "end": "(?=\\)\\s*)", 
+                    "contentName": "meta.function.parameters.pseudocode", 
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.parameters.begin.pseudocode"
+                        }
+                    }, 
+                    "begin": "(\\()"
+                }
+            ], 
+            "beginCaptures": {
+                "1": {
+                    "name": "storage.type.function.pseudocode"
+                }
+            }, 
+            "begin": "^\\s*(Module)\\s+(?=[A-Za-z_][A-Za-z0-9_]*\\s*\\()", 
+            "endCaptures": {
+                "1": {
+                    "name": "punctuation.definition.parameters.end.pseudocode"
+                }
+            }, 
+            "end": "(\\))"
+        }
+    ], 
+    "scopeName": "source.pseudocode"
+}
