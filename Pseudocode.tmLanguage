@@ -24,7 +24,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(For|Do|While|End While|If|End If|Then|Else|End For|End Module|Select|Case)\b</string>
+			<string>\b(For|Do|While|End While|If|End If|Then|Else|End For|End Module|Select|Case|End Function)\b</string>
 			<key>name</key>
 			<string>keyword.control.pseudocode</string>
 		</dict>
