@@ -54,7 +54,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(Display|Input|Declare|Set|Call)\b</string>
+			<string>\b(Display|Input|Declare|Set|Call|Return)\b</string>
 			<key>name</key>
 			<string>keyword.other.pseudocode</string>
 		</dict>
