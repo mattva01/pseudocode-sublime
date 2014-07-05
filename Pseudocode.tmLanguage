@@ -66,7 +66,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.function.pseudocode</string>
+					<string>storage.type.module.pseudocode</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -80,7 +80,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.function.pseudocode</string>
+			<string>meta.module.pseudocode</string>
 			<key>patterns</key>
 			<array>
 				<dict>

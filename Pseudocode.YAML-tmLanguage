@@ -29,10 +29,10 @@ patterns:
 - name: keyword.other.pseudocode
   match: \b(Display|Input|Declare|Set|Call|Return)\b
 
-- name: meta.function.pseudocode
+- name: meta.module.pseudocode
   begin: ^\s*(Module)\s+(?=[A-Za-z_][A-Za-z0-9_]*\s*\()
   beginCaptures:
-    '1': {name: storage.type.function.pseudocode}
+    '1': {name: storage.type.module.pseudocode}
   end: (\))
   endCaptures:
     '1': {name: punctuation.definition.parameters.end.pseudocode}
