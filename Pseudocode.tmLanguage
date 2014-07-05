@@ -36,7 +36,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(Constant)\b</string>
+			<string>\b(Constant|Ref)\b</string>
 			<key>name</key>
 			<string>storage.modifier.pseudocode</string>
 		</dict>
@@ -106,6 +106,66 @@
 					<string>meta.function.parameters.pseudocode</string>
 					<key>end</key>
 					<string>(?=\)\s*)</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\s*(Function)\s+(?=\w.*\s+)(?=[A-Za-z_][A-Za-z0-9_]*\s*\()</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.pseudocode</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.pseudocode</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.function.pseudocode</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?=[A-Za-z_][A-Za-z0-9_]*)\s*\(</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.pseudocode</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>meta.function.identifier.pseudocode</string>
+					<key>end</key>
+					<string>(\))</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?=\w.*\s*\w+\s*[A-Za-z_][A-Za-z0-9_]*\s*\()</string>
+					<key>contentName</key>
+					<string>meta.function.return-type.pseudocode</string>
+					<key>end</key>
+					<string>(?=[A-Za-z_][A-Za-z0-9_]*\s*\()</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\b(Integer|Real|String|Boolean)\b</string>
+							<key>name</key>
+							<string>storage.type.pseudocode</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>

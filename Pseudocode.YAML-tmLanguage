@@ -11,13 +11,14 @@ patterns:
     '1': {name: punctuation.definition.comment.pseudocode}
 
 - name: keyword.control.pseudocode
-  match: \b(For|Do|While|End While|If|End If|Then|Else|End For|End Module|Select|Case)\b
+  match: \b(For|Do|While|End While|If|End If|Then|Else|End For|End Module|Select|Case|End
+    Function)\b
 
 - name: storage.type.pseudocode
   match: \b(Integer|Real|String|Boolean)\b
 
 - name: storage.modifier.pseudocode
-  match: \b(Constant)\b
+  match: \b(Constant|Ref)\b
 
 - name: constant.numeric.pseudocode
   match: \b((0(x|X)[0-9a-fA-F]+)|([0-9]+(\.[0-9]+)?))\b
@@ -26,7 +27,7 @@ patterns:
   match: =|==|!=
 
 - name: keyword.other.pseudocode
-  match: \b(Display|Input|Declare|Set|Call)\b
+  match: \b(Display|Input|Declare|Set|Call|Return)\b
 
 - name: meta.function.pseudocode
   begin: ^\s*(Module)\s+(?=[A-Za-z_][A-Za-z0-9_]*\s*\()
@@ -36,25 +37,48 @@ patterns:
   endCaptures:
     '1': {name: punctuation.definition.parameters.end.pseudocode}
   patterns:
-  - begin: (?=[A-Za-z_][A-Za-z0-9_]*)
-    contentName: entity.name.function.pseudocode
+  - contentName: entity.name.function.pseudocode
+    begin: (?=[A-Za-z_][A-Za-z0-9_]*)
     end: (?![A-Za-z0-9_])
-  - begin: (\()
+  - contentName: meta.function.parameters.pseudocode
+    begin: (\()
     beginCaptures:
       '1': {name: punctuation.definition.parameters.begin.pseudocode}
-    contentName: meta.function.parameters.pseudocode
     end: (?=\)\s*)
-- begin: (')
+
+- name: meta.function.pseudocode
+  begin: ^\s*(Function)\s+(?=\w.*\s+)(?=[A-Za-z_][A-Za-z0-9_]*\s*\()
+  beginCaptures:
+    '1': {name: storage.type.function.pseudocode}
+  end: (\))
+  endCaptures:
+    '1': {name: punctuation.definition.parameters.end.pseudocode}
+  patterns:
+  - contentName: meta.function.identifier.pseudocode
+    begin: (?=[A-Za-z_][A-Za-z0-9_]*)\s*\(
+    end: (\))
+    beginCaptures:
+      '1': {name: entity.name.function.pseudocode}
+  - contentName: meta.function.return-type.pseudocode
+    begin: (?=\w.*\s*\w+\s*[A-Za-z_][A-Za-z0-9_]*\s*\()
+    end: (?=[A-Za-z_][A-Za-z0-9_]*\s*\()
+    patterns:
+    - name: storage.type.pseudocode
+      match: \b(Integer|Real|String|Boolean)\b
+
+
+- name: string.quoted.single.pseudocode
+  begin: (')
   beginCaptures:
     '1': {name: punctuation.definition.string.begin.pseudocode}
   end: (')
   endCaptures:
     '1': {name: punctuation.definition.string.end.pseudocode}
-  name: string.quoted.single.pseudocode
-- begin: (")
+
+- name: string.quoted.single.pseudocode
+  begin: (")
   beginCaptures:
     '1': {name: punctuation.definition.string.begin.pseudocode}
   end: (")
   endCaptures:
     '1': {name: punctuation.definition.string.end.pseudocode}
-  name: string.quoted.single.pseudocode
