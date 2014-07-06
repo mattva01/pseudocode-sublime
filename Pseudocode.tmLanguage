@@ -111,7 +111,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*(Function)\s+.*\s+(?=[A-Za-z_][A-Za-z0-9_]*\s*\()</string>
+			<string>^\s*(Function)\s+(?=\w.*\s+)(?=[A-Za-z_][A-Za-z0-9_]*\s*\()</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>

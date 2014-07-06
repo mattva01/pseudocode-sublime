@@ -47,7 +47,7 @@ patterns:
     end: (?=\)\s*)
 
 - name: meta.function.pseudocode
-  begin: ^\s*(Function)\s+.*\s+(?=[A-Za-z_][A-Za-z0-9_]*\s*\()
+  begin: ^\s*(Function)\s+(?=\w.*\s+)(?=[A-Za-z_][A-Za-z0-9_]*\s*\()
   beginCaptures:
     '1': {name: storage.type.function.pseudocode}
   end: (\))
